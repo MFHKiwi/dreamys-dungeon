@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://bin43duk1sm0q"]
+
+[ext_resource type="Texture2D" uid="uid://c2v6ux53r47et" path="res://assets/back.png" id="1_1h36f"]
+[ext_resource type="Script" path="res://dreamy.gd" id="1_108gk"]
+[ext_resource type="Texture2D" uid="uid://ddq4f7827yjf5" path="res://assets/forward.png" id="2_3l5xj"]
+[ext_resource type="Texture2D" uid="uid://xwxjfatk76rx" path="res://assets/left.png" id="3_7xr71"]
+[ext_resource type="Texture2D" uid="uid://xhmmk171edwo" path="res://assets/right.png" id="4_b01nj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cesc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1h36f")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3l5xj")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1h36f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7xr71")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_b01nj")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_1kl1x"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgu7u"]
+radius = 84.0
+height = 310.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="dreamy" type="CharacterBody2D" parent="."]
+script = ExtResource("1_108gk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="dreamy"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_cesc6")
+animation = &"idle"
+script = SubResource("GDScript_1kl1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dreamy"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_bgu7u")
