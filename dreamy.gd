@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 signal hit
-const SPEED = 300.0
+const SPEED = 15000.0
 
 func _process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -26,9 +26,13 @@ func _physics_process(delta):
 		velocity = direction * SPEED * delta
 	else:
 		velocity = Vector2(0, 0)
-	var collision = move_and_collide(velocity)
+	move_and_slide()
+	var collision
+	for i in get_slide_collision_count():
+		collision = get_slide_collision(i)
 	if collision:
-		emit_signal("hit")
+		if !is_instance_of(collision.get_collider(), TileMap):
+			emit_signal("hit")
 
 func _on_hit():
-	position = Vector2(0,0)
+	position = Vector2(200,200)
