@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bin43duk1sm0q"]
+[gd_scene load_steps=11 format=3 uid="uid://bin43duk1sm0q"]
 
 [ext_resource type="Texture2D" uid="uid://c2v6ux53r47et" path="res://assets/back.png" id="1_1h36f"]
 [ext_resource type="Script" path="res://dreamy.gd" id="1_108gk"]
@@ -67,6 +67,10 @@ func _process(delta):
 radius = 84.0
 height = 310.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5k04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meoic"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="dreamy" type="CharacterBody2D" parent="."]
@@ -81,3 +85,15 @@ script = SubResource("GDScript_1kl1x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dreamy"]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_bgu7u")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(123, 114)
+sprite_frames = SubResource("SpriteFrames_u5k04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(123, 115)
+shape = SubResource("RectangleShape2D_meoic")
+
+[connection signal="hit" from="dreamy" to="dreamy" method="_on_hit"]
