@@ -6,4 +6,3 @@ func _ready():
 	await get_tree().create_timer(3).timeout
 	get_parent().remove_child(self)
 	pass # Replace with function body.
-

@@ -1,0 +1,132 @@
+[gd_scene load_steps=17 format=3 uid="uid://besrix73t068k"]
+
+[ext_resource type="Script" path="res://dreamy.gd" id="1_jmot4"]
+[ext_resource type="Texture2D" uid="uid://c4t61s18lr2t8" path="res://assets/idle.png" id="2_l7xxn"]
+[ext_resource type="Texture2D" uid="uid://bps4orwp7fnvu" path="res://assets/walkdown.png" id="3_ewso1"]
+[ext_resource type="Texture2D" uid="uid://cr81tvy2lo3nq" path="res://assets/walkdown2.png" id="4_y358p"]
+[ext_resource type="Texture2D" uid="uid://3etax8nmsl25" path="res://assets/lookingup.png" id="5_wp0gr"]
+[ext_resource type="Texture2D" uid="uid://ceuw3xic6crmn" path="res://assets/walkingup.png" id="6_c2yjt"]
+[ext_resource type="Texture2D" uid="uid://bfp2ut77w88yg" path="res://assets/walkingup2.png" id="7_xbet3"]
+[ext_resource type="Texture2D" uid="uid://dituf5gyb877c" path="res://assets/lookingleft.png" id="8_nqebg"]
+[ext_resource type="Texture2D" uid="uid://b1qb58lrhc3au" path="res://assets/walkingleft.png" id="9_j1on7"]
+[ext_resource type="Texture2D" uid="uid://b43fwrtv27hl8" path="res://assets/walkingleft2.png" id="10_nlvq2"]
+[ext_resource type="Texture2D" uid="uid://hn3djlveb12f" path="res://assets/lookingright.png" id="11_n74nk"]
+[ext_resource type="Texture2D" uid="uid://qnobjxnvspj2" path="res://assets/walkingright.png" id="12_1av6w"]
+[ext_resource type="Texture2D" uid="uid://bacopxlqx7y6v" path="res://assets/walkingright2.png" id="13_iq8er"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xs432"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l7xxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ewso1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l7xxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y358p")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wp0gr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c2yjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wp0gr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xbet3")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l7xxn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nqebg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j1on7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nqebg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nlvq2")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_n74nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1av6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n74nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iq8er")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_nv7ru"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5on58"]
+radius = 66.6667
+height = 227.778
+
+[node name="dreamy" type="CharacterBody2D" groups=["dreamy"]]
+z_index = 1
+position = Vector2(2.08165e-12, 184)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_jmot4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.08165e-12, 0)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_xs432")
+animation = &"right"
+script = SubResource("GDScript_nv7ru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, 0)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CapsuleShape2D_5on58")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

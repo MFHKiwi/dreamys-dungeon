@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-signal hit
 signal timeout
 const SPEED = 15000.0
 var bullet = preload("res://projectile.tscn")
@@ -17,11 +16,11 @@ func _ready():
 func _on_timeout():
 	if Input.is_key_pressed(KEY_W):
 		fire('w')
-	if Input.is_key_pressed(KEY_S):
+	elif Input.is_key_pressed(KEY_S):
 		fire('s')
-	if Input.is_key_pressed(KEY_A):
+	elif Input.is_key_pressed(KEY_A):
 		fire('a')
-	if Input.is_key_pressed(KEY_D):
+	elif Input.is_key_pressed(KEY_D):
 		fire('d')
 	pass
 
@@ -54,6 +53,7 @@ func _physics_process(delta):
 	if collision:
 		if !is_instance_of(collision.get_collider(), TileMap) && !is_instance_of(collision.get_collider(), RigidBody2D):
 			emit_signal("hit")
+	
 
 func fire(direction):
 	var bullet_instance = bullet.instantiate()
@@ -78,4 +78,4 @@ func fire(direction):
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
 
 func _on_hit():
-	position = Vector2(200,200)
+	position = Vector2(100,100)
