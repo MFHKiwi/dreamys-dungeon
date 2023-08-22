@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8d5q"]
 size = Vector2(11, 43)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=["bullet"]]
 gravity_scale = 2.66454e-15
 script = ExtResource("1_50dsl")
 
