@@ -11,8 +11,7 @@ position = Vector2(100, 100)
 
 [node name="Room1" parent="." instance=ExtResource("6_02gk0")]
 position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(2, 2)
 
-[node name="Area2D" parent="." instance=ExtResource("15_nohxb")]
-position = Vector2(795, 200)
+[node name="enemy" parent="." instance=ExtResource("15_nohxb")]
+position = Vector2(1150, 910)
 scale = Vector2(0.5, 0.5)

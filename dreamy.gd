@@ -24,9 +24,6 @@ func _on_timeout():
 		fire('d')
 	pass
 
-func _process(delta):
-	pass
-
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -47,12 +44,6 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2(0, 0)
 	move_and_slide()
-	var collision
-	for i in get_slide_collision_count():
-		collision = get_slide_collision(i)
-	if collision:
-		if !is_instance_of(collision.get_collider(), TileMap) && !is_instance_of(collision.get_collider(), RigidBody2D):
-			emit_signal("hit")
 	
 
 func fire(direction):
