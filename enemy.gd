@@ -41,4 +41,4 @@ func _physics_process(delta):
 	if health < 1:
 		print("NISSANNNNNN")
 		get_parent().remove_child(self)
-		room_1.get_child(1).visible = true
+		#room_1.get_child(1).visible = true

@@ -6,6 +6,7 @@ var bullet = preload("res://projectile.tscn")
 var bullet_speed = 1000
 
 func _ready():
+	get_tree().get_root().content_scale_factor = 2
 	var timer := Timer.new()
 	add_child(timer)
 	timer.wait_time = 0.25
