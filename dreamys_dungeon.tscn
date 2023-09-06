@@ -1,17 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bin43duk1sm0q"]
+[gd_scene load_steps=3 format=3 uid="uid://bin43duk1sm0q"]
 
+[ext_resource type="PackedScene" uid="uid://cdip7ymlg06hv" path="res://starting_room.tscn" id="2_y5mqx"]
 [ext_resource type="PackedScene" uid="uid://besrix73t068k" path="res://dreamy.tscn" id="3_ycs3c"]
-[ext_resource type="PackedScene" uid="uid://dg00rxebphf7c" path="res://room_1.tscn" id="6_02gk0"]
-[ext_resource type="PackedScene" uid="uid://c4urhxujg6er4" path="res://enemy.tscn" id="15_nohxb"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="dreamy" parent="." instance=ExtResource("3_ycs3c")]
 position = Vector2(100, 100)
 
-[node name="Room1" parent="." instance=ExtResource("6_02gk0")]
+[node name="Starting_room" parent="." instance=ExtResource("2_y5mqx")]
 position = Vector2(2.08165e-12, 2.08165e-12)
-
-[node name="enemy" parent="." instance=ExtResource("15_nohxb")]
-position = Vector2(1150, 910)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2, 2)

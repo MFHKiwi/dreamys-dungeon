@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg00rxebphf7c"]
+[gd_scene load_steps=5 format=3 uid="uid://dg00rxebphf7c"]
 
 [ext_resource type="TileSet" uid="uid://8mnrej5o12s6" path="res://tileset.tres" id="1_jx5qb"]
 [ext_resource type="Script" path="res://ladder_area.gd" id="2_jvgvg"]
+[ext_resource type="PackedScene" uid="uid://dscltythnp8p0" path="res://laser.tscn" id="3_3e40h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueguc"]
 size = Vector2(17.5, 20)
@@ -29,5 +30,28 @@ script = ExtResource("2_jvgvg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder_area"]
 position = Vector2(1.25, 0)
 shape = SubResource("RectangleShape2D_ueguc")
+
+[node name="Laser" parent="." instance=ExtResource("3_3e40h")]
+position = Vector2(216.5, 22.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="Laser2" parent="." instance=ExtResource("3_3e40h")]
+position = Vector2(440.5, 22.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="Laser3" parent="." instance=ExtResource("3_3e40h")]
+position = Vector2(329, 497.5)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="Laser4" parent="." instance=ExtResource("3_3e40h")]
+position = Vector2(110, 497.5)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="Laser5" parent="." instance=ExtResource("3_3e40h")]
+position = Vector2(542, 497.5)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="ladder_area" to="ladder_area" method="_on_body_entered"]
