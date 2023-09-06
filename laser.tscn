@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dscltythnp8p0"]
+[gd_scene load_steps=8 format=3 uid="uid://dscltythnp8p0"]
 
 [ext_resource type="Texture2D" uid="uid://cs1bg2uqew88c" path="res://assets/unactivated.png" id="1_7ub6x"]
 [ext_resource type="Script" path="res://laser.gd" id="1_llfy3"]
@@ -7,6 +7,17 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_si56m"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hj3xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_7ub6x")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_7ub6x")
@@ -29,27 +40,22 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_w3nit")
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"charge",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_w3nit")
 }],
 "loop": true,
 "name": &"fire",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qw48"]
+size = Vector2(20, 1050)
 
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_llfy3")
@@ -62,4 +68,13 @@ animation = &"idle"
 position = Vector2(-0.5, 507.25)
 scale = Vector2(1, 18.1863)
 sprite_frames = SubResource("SpriteFrames_5gic5")
-animation = &"charge"
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.24845e-05, 529)
+shape = SubResource("RectangleShape2D_8qw48")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
