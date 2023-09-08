@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://8mnrej5o12s6"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://8mnrej5o12s6"]
 
 [ext_resource type="Texture2D" uid="uid://cg661lltcsnbc" path="res://assets/wall.png" id="1_1bumd"]
 [ext_resource type="Texture2D" uid="uid://b4e8ac1j8co8d" path="res://assets/tile.png" id="2_t352n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djq3by0p0b51g" path="res://assets/ladder.png" id="4_fqk6h"]
 [ext_resource type="Texture2D" uid="uid://di1r13trm3hsh" path="res://assets/stone.png" id="5_jn2vh"]
 [ext_resource type="Texture2D" uid="uid://c7kcedr47x4jx" path="res://assets/door.png" id="6_0flsk"]
+[ext_resource type="Texture2D" uid="uid://5dxyualyo23s" path="res://assets/grass.png" id="7_5o31d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylhcw"]
 texture = ExtResource("1_1bumd")
@@ -21,7 +22,6 @@ texture_region_size = Vector2i(20, 20)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5tua"]
 texture = ExtResource("3_yyv42")
@@ -66,6 +66,13 @@ texture_region_size = Vector2i(20, 20)
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hd1op"]
+texture = ExtResource("7_5o31d")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [resource]
 tile_size = Vector2i(20, 20)
 physics_layer_0/collision_layer = 1
@@ -75,3 +82,4 @@ sources/2 = SubResource("TileSetAtlasSource_s5tua")
 sources/3 = SubResource("TileSetAtlasSource_xd25h")
 sources/4 = SubResource("TileSetAtlasSource_g2jpk")
 sources/5 = SubResource("TileSetAtlasSource_se3ib")
+sources/6 = SubResource("TileSetAtlasSource_hd1op")
