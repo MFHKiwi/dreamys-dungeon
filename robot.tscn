@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://caq5wfaolbpb7" path="res://assets/robot.png" id="1_pgx8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_we8ql"]
-radius = 80.0
-height = 290.0
+radius = 54.0
+height = 116.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8h083"]
 animations = [{

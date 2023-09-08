@@ -8,3 +8,4 @@ func _on_body_entered(body):
 		var next_level = next_level_resource.instantiate()
 		get_tree().get_root().add_child(next_level)
 		old_level.queue_free()
+		body.global_position = Vector2(670, 950)
