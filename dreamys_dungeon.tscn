@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bin43duk1sm0q"]
 
-[ext_resource type="PackedScene" uid="uid://cdip7ymlg06hv" path="res://starting_room.tscn" id="2_y5mqx"]
+[ext_resource type="PackedScene" uid="uid://cdip7ymlg06hv" path="res://starting_room.tscn" id="2_wl33t"]
 [ext_resource type="PackedScene" uid="uid://besrix73t068k" path="res://dreamy.tscn" id="3_ycs3c"]
 
 [node name="Node2D" type="Node2D"]
@@ -8,6 +8,6 @@
 [node name="dreamy" parent="." instance=ExtResource("3_ycs3c")]
 position = Vector2(100, 100)
 
-[node name="Starting_room" parent="." instance=ExtResource("2_y5mqx")]
+[node name="Starting_room" parent="." instance=ExtResource("2_wl33t")]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(2, 2)

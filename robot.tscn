@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0wwfiw4ti2gc"]
+
+[ext_resource type="Texture2D" uid="uid://caq5wfaolbpb7" path="res://assets/robot.png" id="1_pgx8p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_we8ql"]
+radius = 80.0
+height = 290.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8h083"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pgx8p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Robot" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_we8ql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8h083")
