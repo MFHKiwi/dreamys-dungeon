@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0wwfiw4ti2gc"]
+[gd_scene load_steps=5 format=3 uid="uid://b0wwfiw4ti2gc"]
 
+[ext_resource type="Script" path="res://robot.gd" id="1_doyxq"]
 [ext_resource type="Texture2D" uid="uid://caq5wfaolbpb7" path="res://assets/robot.png" id="1_pgx8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_we8ql"]
@@ -18,9 +19,12 @@ animations = [{
 }]
 
 [node name="Robot" type="Area2D"]
+script = ExtResource("1_doyxq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_we8ql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8h083")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

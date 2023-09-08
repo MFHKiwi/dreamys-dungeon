@@ -12,7 +12,7 @@ func _ready():
 	timer.wait_time = 4
 	timer.start()
 	timer.connect("timeout", Callable(self, "_on_timeout"))
-	dreamy = get_node("../../dreamy")
+	dreamy = get_tree().get_root().get_node("Node2D/dreamy")
 	connect("hit", Callable(dreamy, "_on_hit"))
 
 func _on_timeout():
