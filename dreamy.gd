@@ -45,7 +45,7 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2(0, 0)
 	move_and_slide()
-	
+
 
 func fire(direction):
 	var bullet_instance = bullet.instantiate()
@@ -68,13 +68,6 @@ func fire(direction):
 			bullet_instance.position += Vector2(80, 0)
 			bullet_instance.apply_impulse(Vector2(bullet_speed, 0), Vector2())
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
-	var old_level = get_tree().get_root().get_node("Node2D/Starting_room")
-	get_tree().get_root().remove_child(old_level)
-	old_level.call_deferred("free")
-	var next_level_resource = load("res://room_1.tscn")
-	var next_level = next_level_resource.instantiate()
-	get_tree().get_root().add_child(next_level)
-	get_tree().get_root().content_scale_factor = 1
 
 
 func _on_hit():

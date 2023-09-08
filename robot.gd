@@ -5,28 +5,19 @@ signal hit
 var dreamy
 var health = 100
 var speed: float = 0.01
-#@onready var room_2 = get_tree().get_root().get_child(1)
+var room_1
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	var timer := Timer.new()
-	add_child(timer)
-	timer.wait_time = 10
-	timer.start()
-	timer.connect("timeout", Callable(self, "_on_timeout"))
 	dreamy = get_tree().get_root().get_node("Node2D/dreamy")
 	connect("hit", Callable(dreamy, "_on_hit"))
-	$AnimatedSprite2D.play("default")
+	room_1 = get_tree().get_root().get_child(1)
+	pass # Replace with function body.
 
-func _on_timeout():
-	speed = 0.0
-	$AnimatedSprite2D.pause()
-	await get_tree().create_timer(1).timeout
-	speed = 0.0275
-	$AnimatedSprite2D.speed_scale = 2
-	$AnimatedSprite2D.play()
-	await get_tree().create_timer(3).timeout
-	speed = 0.01
-	$AnimatedSprite2D.speed_scale = 1
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
 
 func _on_body_entered(body):
 	if body.is_in_group("dreamy"):
@@ -39,5 +30,5 @@ func _on_body_entered(body):
 func _physics_process(delta):
 	self.global_position = lerp(self.global_position,dreamy.global_position,speed)
 	if health < 1:
-		print("NISSANNNNNN")
 		get_parent().remove_child(self)
+		room_1.get_child(1).visible = true
