@@ -31,6 +31,9 @@ func _on_timeout():
 func _process(delta):
 	if shooting and in_area:
 		emit_signal("hit")
+		shooting = false
+		$Beam.play("idle")
+		$Turret.play("idle")
 	pass
 
 

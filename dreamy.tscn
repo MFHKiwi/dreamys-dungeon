@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://besrix73t068k"]
+[gd_scene load_steps=18 format=3 uid="uid://besrix73t068k"]
 
 [ext_resource type="Script" path="res://dreamy.gd" id="1_jmot4"]
 [ext_resource type="Texture2D" uid="uid://c4t61s18lr2t8" path="res://assets/idle.png" id="2_l7xxn"]
 [ext_resource type="Texture2D" uid="uid://bps4orwp7fnvu" path="res://assets/walkdown.png" id="3_ewso1"]
 [ext_resource type="Texture2D" uid="uid://cr81tvy2lo3nq" path="res://assets/walkdown2.png" id="4_y358p"]
+[ext_resource type="Texture2D" uid="uid://b4kgi4p2k814q" path="res://assets/death_character.png" id="5_myiy6"]
 [ext_resource type="Texture2D" uid="uid://3etax8nmsl25" path="res://assets/lookingup.png" id="5_wp0gr"]
 [ext_resource type="Texture2D" uid="uid://ceuw3xic6crmn" path="res://assets/walkingup.png" id="6_c2yjt"]
 [ext_resource type="Texture2D" uid="uid://bfp2ut77w88yg" path="res://assets/walkingup2.png" id="7_xbet3"]
@@ -31,6 +32,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_myiy6")
+}],
+"loop": true,
+"name": &"death",
 "speed": 5.0
 }, {
 "frames": [{
@@ -121,7 +130,7 @@ script = ExtResource("1_jmot4")
 position = Vector2(2.08165e-12, 0)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_xs432")
-animation = &"right"
+animation = &"death"
 script = SubResource("GDScript_nv7ru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

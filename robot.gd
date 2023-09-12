@@ -22,7 +22,6 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.is_in_group("dreamy"):
 		emit_signal("hit")
-		self.position = Vector2(1150, 910)
 	elif body.is_in_group("bullet"):
 		body.queue_free()
 		health = health - 2
