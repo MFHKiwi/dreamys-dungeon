@@ -4,9 +4,12 @@ signal timeout
 const SPEED = 15000.0
 var bullet = preload("res://projectile.tscn")
 var bullet_speed = 1000
+var health = 3
+@onready var face = get_tree().get_root().get_node("Node2D/Face")
+@onready var hpbar = get_tree().get_root().get_node("Node2D/ProgressBar")
 
 func _ready():
-	get_tree().get_root().content_scale_factor = 2
+	#get_tree().get_root().content_scale_factor = 2
 	var timer := Timer.new()
 	add_child(timer)
 	timer.wait_time = 0.25
@@ -45,6 +48,11 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2(0, 0)
 	move_and_slide()
+	hpbar.value = health
+	if health < 1:
+		get_tree().paused = true
+		$AnimatedSprite2D.play("death")
+		face.play("death")
 
 
 func fire(direction):
@@ -71,4 +79,5 @@ func fire(direction):
 
 
 func _on_hit():
-	position = Vector2(100,100)
+	health = health - 1
+	

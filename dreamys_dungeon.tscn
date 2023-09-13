@@ -1,7 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://bin43duk1sm0q"]
+[gd_scene load_steps=10 format=3 uid="uid://bin43duk1sm0q"]
 
 [ext_resource type="PackedScene" uid="uid://cdip7ymlg06hv" path="res://starting_room.tscn" id="2_wl33t"]
+[ext_resource type="Texture2D" uid="uid://b0bacmue0o82c" path="res://assets/death.png" id="3_oyie3"]
+[ext_resource type="Texture2D" uid="uid://d2dlvkoyxbj36" path="res://assets/face.png" id="3_qp1un"]
 [ext_resource type="PackedScene" uid="uid://besrix73t068k" path="res://dreamy.tscn" id="3_ycs3c"]
+[ext_resource type="Texture2D" uid="uid://cfght4gmysfoh" path="res://assets/bus.png" id="4_rkkae"]
+[ext_resource type="Texture2D" uid="uid://dlli4ieqvpjbe" path="res://assets/suprised.png" id="5_tmpkl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_da0c8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oyie3")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qp1un")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tmpkl")
+}],
+"loop": true,
+"name": &"surprised",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0adf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rkkae")
+}],
+"loop": true,
+"name": &"omgbus",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hiuu"]
+bg_color = Color(0.905882, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,4 +63,21 @@ position = Vector2(100, 100)
 
 [node name="Starting_room" parent="." instance=ExtResource("2_wl33t")]
 position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(2, 2)
+
+[node name="Face" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 1100)
+sprite_frames = SubResource("SpriteFrames_da0c8")
+
+[node name="Text" type="AnimatedSprite2D" parent="."]
+position = Vector2(752, 1104)
+sprite_frames = SubResource("SpriteFrames_t0adf")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 20.0
+offset_top = 1070.0
+offset_right = 270.0
+offset_bottom = 1130.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_0hiuu")
+max_value = 3.0
+step = 1.0
+show_percentage = false

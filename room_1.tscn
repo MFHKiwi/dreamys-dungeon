@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg00rxebphf7c"]
+[gd_scene load_steps=7 format=3 uid="uid://dg00rxebphf7c"]
 
+[ext_resource type="Script" path="res://room_1.gd" id="1_4ec2d"]
 [ext_resource type="TileSet" uid="uid://8mnrej5o12s6" path="res://tileset.tres" id="1_jx5qb"]
 [ext_resource type="Script" path="res://ladder_area.gd" id="2_jvgvg"]
 [ext_resource type="PackedScene" uid="uid://dscltythnp8p0" path="res://laser.tscn" id="3_3e40h"]
@@ -10,6 +11,7 @@ size = Vector2(17.5, 20)
 
 [node name="Room1" type="Node2D"]
 scale = Vector2(2, 2)
+script = ExtResource("1_4ec2d")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_jx5qb")
