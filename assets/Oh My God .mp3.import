@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b65gvcna7cch1"
+path="res://.godot/imported/Oh My God .mp3-661c9c0a7f3b46265449ee0fac2cd6c1.mp3str"
+
+[deps]
+
+source_file="res://assets/Oh My God .mp3"
+dest_files=["res://.godot/imported/Oh My God .mp3-661c9c0a7f3b46265449ee0fac2cd6c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

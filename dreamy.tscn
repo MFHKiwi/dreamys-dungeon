@@ -130,7 +130,7 @@ script = ExtResource("1_jmot4")
 position = Vector2(2.08165e-12, 0)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_xs432")
-animation = &"death"
+animation = &"back"
 script = SubResource("GDScript_nv7ru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
