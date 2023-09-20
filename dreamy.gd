@@ -7,6 +7,8 @@ var bullet_speed = 1000
 var health = 3
 @onready var face = get_tree().get_root().get_node("Node2D/Face")
 @onready var hpbar = get_tree().get_root().get_node("Node2D/ProgressBar")
+@onready var audioplayer = get_tree().get_root().get_node("Node2D/AudioStreamPlayer2D")
+@onready var hurt = preload("res://assets/hurt.mp3")
 
 func _ready():
 	#get_tree().get_root().content_scale_factor = 2
@@ -80,4 +82,8 @@ func fire(direction):
 
 func _on_hit():
 	health = health - 1
-	
+	face.play("hurt")
+	audioplayer.stream = hurt
+	audioplayer.play()
+	await get_tree().create_timer(2).timeout
+	face.play("default")

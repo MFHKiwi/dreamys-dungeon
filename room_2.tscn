@@ -16,7 +16,7 @@ layer_0/tile_data = PackedInt32Array(0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0
 
 [node name="enemy" parent="." instance=ExtResource("2_n0twf")]
 position = Vector2(320.5, 86)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.35, 0.35)
 
 [node name="TileMap2" type="TileMap" parent="."]
 visible = false

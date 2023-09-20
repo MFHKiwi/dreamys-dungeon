@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bin43duk1sm0q"]
+[gd_scene load_steps=14 format=3 uid="uid://bin43duk1sm0q"]
 
 [ext_resource type="PackedScene" uid="uid://cdip7ymlg06hv" path="res://starting_room.tscn" id="2_wl33t"]
 [ext_resource type="Texture2D" uid="uid://b0bacmue0o82c" path="res://assets/death.png" id="3_oyie3"]
 [ext_resource type="Texture2D" uid="uid://d2dlvkoyxbj36" path="res://assets/face.png" id="3_qp1un"]
+[ext_resource type="Texture2D" uid="uid://dr5dobhyn1osp" path="res://assets/nissan.png" id="3_uwryj"]
 [ext_resource type="PackedScene" uid="uid://besrix73t068k" path="res://dreamy.tscn" id="3_ycs3c"]
 [ext_resource type="Texture2D" uid="uid://cfght4gmysfoh" path="res://assets/bus.png" id="4_rkkae"]
+[ext_resource type="Texture2D" uid="uid://bfuwf7rlbcc8v" path="res://assets/hurt.png" id="5_qp5cw"]
 [ext_resource type="Texture2D" uid="uid://dlli4ieqvpjbe" path="res://assets/suprised.png" id="5_tmpkl"]
+[ext_resource type="Texture2D" uid="uid://cyhq6dp1n1ron" path="res://assets/omg.png" id="7_7pxav"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_da0c8"]
 animations = [{
@@ -27,6 +30,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_qp5cw")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_tmpkl")
 }],
 "loop": true,
@@ -38,6 +49,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_rkkae")
+}],
+"loop": true,
+"name": &"bus",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": null
 }],
 "loop": true,
@@ -46,15 +65,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_rkkae")
+"texture": ExtResource("7_7pxav")
 }],
 "loop": true,
-"name": &"omgbus",
+"name": &"omg",
 "speed": 5.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hiuu"]
 bg_color = Color(0.905882, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72p5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uwryj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -65,11 +95,11 @@ position = Vector2(100, 100)
 position = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Face" type="AnimatedSprite2D" parent="."]
-position = Vector2(640, 1100)
+position = Vector2(325, 1100)
 sprite_frames = SubResource("SpriteFrames_da0c8")
 
 [node name="Text" type="AnimatedSprite2D" parent="."]
-position = Vector2(752, 1104)
+position = Vector2(427, 1104)
 sprite_frames = SubResource("SpriteFrames_t0adf")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -79,5 +109,22 @@ offset_right = 270.0
 offset_bottom = 1130.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_0hiuu")
 max_value = 3.0
+step = 1.0
+show_percentage = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Face2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(945, 1100)
+sprite_frames = SubResource("SpriteFrames_72p5x")
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+visible = false
+offset_left = 1010.0
+offset_top = 1070.0
+offset_right = 1260.0
+offset_bottom = 1130.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_0hiuu")
 step = 1.0
 show_percentage = false

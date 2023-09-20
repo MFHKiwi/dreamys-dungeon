@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4urhxujg6er4"]
+[gd_scene load_steps=7 format=3 uid="uid://c4urhxujg6er4"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_nk68v"]
 [ext_resource type="Texture2D" uid="uid://8mfdvc4aynja" path="res://assets/finalboss.png" id="2_fyklb"]
 [ext_resource type="Texture2D" uid="uid://ivb0bgy13dxt" path="res://assets/car2.png" id="3_goyub"]
+[ext_resource type="Texture2D" uid="uid://x1ecjjfyahjp" path="res://assets/explosion.png" id="4_e1kga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6bim"]
 size = Vector2(428, 412)
@@ -31,5 +32,23 @@ shape = SubResource("RectangleShape2D_r6bim")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hvhq0")
+
+[node name="Sprite2D1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.999998, -9.53674e-07)
+scale = Vector2(1.28324, 1.31429)
+texture = ExtResource("4_e1kga")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(57, -36)
+scale = Vector2(1.28324, 1.31429)
+texture = ExtResource("4_e1kga")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-46, 52)
+scale = Vector2(1.28324, 1.31429)
+texture = ExtResource("4_e1kga")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

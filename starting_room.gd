@@ -18,5 +18,3 @@ func _on_area_2d_body_entered(body):
 		var next_level_resource = load("res://room_1.tscn")
 		var next_level = next_level_resource.instantiate()
 		get_tree().get_root().add_child(next_level)
-		#get_tree().get_root().content_scale_factor = 1
-
