@@ -98,6 +98,7 @@ func _on_hit():
 
 func _on_game_won():
 	self.set_physics_process(false)
+	timer.stop()
 	face.play("happy")
 	$AnimatedSprite2D.play("back")
 	pass # Replace with function body.

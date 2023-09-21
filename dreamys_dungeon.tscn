@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bin43duk1sm0q"]
+[gd_scene load_steps=16 format=3 uid="uid://bin43duk1sm0q"]
 
 [ext_resource type="PackedScene" uid="uid://cdip7ymlg06hv" path="res://starting_room.tscn" id="2_wl33t"]
 [ext_resource type="Texture2D" uid="uid://b0bacmue0o82c" path="res://assets/death.png" id="3_oyie3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bfuwf7rlbcc8v" path="res://assets/hurt.png" id="5_qp5cw"]
 [ext_resource type="Texture2D" uid="uid://dlli4ieqvpjbe" path="res://assets/suprised.png" id="5_tmpkl"]
 [ext_resource type="Texture2D" uid="uid://cyhq6dp1n1ron" path="res://assets/omg.png" id="7_7pxav"]
+[ext_resource type="Texture2D" uid="uid://c7rl00r5e0uuv" path="res://assets/nissandead.png" id="10_c4pkn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_da0c8"]
 animations = [{
@@ -86,6 +87,14 @@ bg_color = Color(0.905882, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_72p5x"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_c4pkn")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_uwryj")

@@ -57,6 +57,7 @@ func die():
 	self.set_physics_process(false)
 	timer.stop()
 	emit_signal("game_won")
+	face.play("death")
 	$AnimatedSprite2D.stop()
 	audioplayer.stream = death
 	audioplayer.volume_db = -5
