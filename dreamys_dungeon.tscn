@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bin43duk1sm0q"]
+[gd_scene load_steps=15 format=3 uid="uid://bin43duk1sm0q"]
 
 [ext_resource type="PackedScene" uid="uid://cdip7ymlg06hv" path="res://starting_room.tscn" id="2_wl33t"]
 [ext_resource type="Texture2D" uid="uid://b0bacmue0o82c" path="res://assets/death.png" id="3_oyie3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dr5dobhyn1osp" path="res://assets/nissan.png" id="3_uwryj"]
 [ext_resource type="PackedScene" uid="uid://besrix73t068k" path="res://dreamy.tscn" id="3_ycs3c"]
 [ext_resource type="Texture2D" uid="uid://cfght4gmysfoh" path="res://assets/bus.png" id="4_rkkae"]
+[ext_resource type="Texture2D" uid="uid://xxyl4j10x0qt" path="res://assets/dreamyhappy.png" id="5_bp5dq"]
 [ext_resource type="Texture2D" uid="uid://bfuwf7rlbcc8v" path="res://assets/hurt.png" id="5_qp5cw"]
 [ext_resource type="Texture2D" uid="uid://dlli4ieqvpjbe" path="res://assets/suprised.png" id="5_tmpkl"]
 [ext_resource type="Texture2D" uid="uid://cyhq6dp1n1ron" path="res://assets/omg.png" id="7_7pxav"]
@@ -26,6 +27,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bp5dq")
+}],
+"loop": true,
+"name": &"happy",
 "speed": 5.0
 }, {
 "frames": [{

@@ -138,4 +138,7 @@ position = Vector2(2.08165e-12, 0)
 scale = Vector2(0.6, 0.6)
 shape = SubResource("CapsuleShape2D_5on58")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="game_won" from="." to="." method="_on_game_won"]
 [connection signal="timeout" from="." to="." method="_on_timeout"]

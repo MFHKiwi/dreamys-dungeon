@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var face = get_tree().get_root().get_node("Node2D/Face")
 @onready var text = get_tree().get_root().get_node("Node2D/Text")
-@onready var audioplayer = get_tree().get_root().get_node("Node2D/AudioStreamPlayer2D")
-@onready var ohmaygot = preload("res://assets/Oh My God .mp3")
+@onready var audioplayer = get_node("AudioStreamPlayer2D")
+@onready var ohmaygot = preload("res://assets/ohmygod.mp3")
 @onready var bus = preload("res://assets/bus.mp3")
 @onready var laopo = preload("res://assets/laopo.mp3")
 # Called when the node enters the scene tree for the first time.

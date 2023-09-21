@@ -1,13 +1,14 @@
 extends Area2D
 
 signal hit
+signal game_won
 
 var dreamy
 var health = 100
 var speed: float = 0.01
 @onready var face = get_tree().get_root().get_node("Node2D/Face2")
 @onready var hpbar = get_tree().get_root().get_node("Node2D/ProgressBar2")
-@onready var audioplayer = get_tree().get_root().get_node("Node2D/AudioStreamPlayer2D")
+@onready var audioplayer = get_node("AudioStreamPlayer2D")
 @onready var death = preload("res://assets/deathsound.mp3")
 @onready var timer := Timer.new()
 @onready var explosion1 = get_node("Sprite2D1")
@@ -24,6 +25,7 @@ func _ready():
 	timer.connect("timeout", Callable(self, "_on_timeout"))
 	dreamy = get_tree().get_root().get_node("Node2D/dreamy")
 	connect("hit", Callable(dreamy, "_on_hit"))
+	connect("game_won", Callable(dreamy, "_on_game_won"))
 	$AnimatedSprite2D.play("default")
 
 func _on_timeout():
@@ -54,9 +56,10 @@ func _physics_process(delta):
 func die():
 	self.set_physics_process(false)
 	timer.stop()
+	emit_signal("game_won")
 	$AnimatedSprite2D.stop()
 	audioplayer.stream = death
-	audioplayer.volume_db = -15
+	audioplayer.volume_db = -5
 	audioplayer.play()
 	explosion1.visible = true
 	await get_tree().create_timer(6).timeout
