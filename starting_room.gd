@@ -1,8 +1,13 @@
 extends Node2D
 
-
+@onready var text = get_tree().get_root().get_node("Node2D/Text")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	text.play("start1")
+	await get_tree().create_timer(2).timeout
+	text.play("start2")
+	await get_tree().create_timer(2).timeout
+	text.play("default")
 	pass # Replace with function body.
 
 

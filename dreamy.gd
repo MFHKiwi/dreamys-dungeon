@@ -81,6 +81,7 @@ func fire(direction):
 func _on_hit():
 	health = health - 1
 	if health < 1:
+		hpbar.value = health
 		self.set_physics_process(false)
 		timer.stop()
 		get_tree().get_root().get_child(1).queue_free()

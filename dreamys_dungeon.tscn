@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bin43duk1sm0q"]
+[gd_scene load_steps=25 format=3 uid="uid://bin43duk1sm0q"]
 
 [ext_resource type="PackedScene" uid="uid://cdip7ymlg06hv" path="res://starting_room.tscn" id="2_wl33t"]
 [ext_resource type="Texture2D" uid="uid://b0bacmue0o82c" path="res://assets/death.png" id="3_oyie3"]
@@ -10,7 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://bfuwf7rlbcc8v" path="res://assets/hurt.png" id="5_qp5cw"]
 [ext_resource type="Texture2D" uid="uid://dlli4ieqvpjbe" path="res://assets/suprised.png" id="5_tmpkl"]
 [ext_resource type="Texture2D" uid="uid://cyhq6dp1n1ron" path="res://assets/omg.png" id="7_7pxav"]
+[ext_resource type="Texture2D" uid="uid://cnwv0qb4tnw3e" path="res://assets/lasertext.png" id="9_qiuqr"]
+[ext_resource type="Texture2D" uid="uid://01ivul6ivel" path="res://assets/dreamyfinal1.png" id="9_u8iki"]
 [ext_resource type="Texture2D" uid="uid://c7rl00r5e0uuv" path="res://assets/nissandead.png" id="10_c4pkn"]
+[ext_resource type="Texture2D" uid="uid://ddmyi1bd0qbsm" path="res://assets/dreamyfinal2.png" id="10_pr42b"]
+[ext_resource type="Texture2D" uid="uid://calur6s02sqss" path="res://assets/dreamystart1.png" id="11_lcre8"]
+[ext_resource type="Texture2D" uid="uid://bdap0ked81s0c" path="res://assets/dreamystart2.png" id="12_ju0b5"]
+[ext_resource type="Texture2D" uid="uid://bcuwng362jx76" path="res://assets/nissan1.png" id="17_j4u6p"]
+[ext_resource type="Texture2D" uid="uid://xg0mjt3xicd8" path="res://assets/nissan2.png" id="18_3i1cr"]
+[ext_resource type="Texture2D" uid="uid://l8563niw2gep" path="res://assets/nissan3.png" id="19_n1oc4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_da0c8"]
 animations = [{
@@ -75,10 +83,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_u8iki")
+}],
+"loop": true,
+"name": &"final1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_pr42b")
+}],
+"loop": true,
+"name": &"final2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qiuqr")
+}],
+"loop": true,
+"name": &"lasers",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_7pxav")
 }],
 "loop": true,
 "name": &"omg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_lcre8")
+}],
+"loop": true,
+"name": &"start1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ju0b5")
+}],
+"loop": true,
+"name": &"start2",
 "speed": 5.0
 }]
 
@@ -104,6 +152,41 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_m86xg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_j4u6p")
+}],
+"loop": true,
+"name": &"nissan1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_3i1cr")
+}],
+"loop": true,
+"name": &"nissan2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_n1oc4")
+}],
+"loop": true,
+"name": &"nissan3",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="dreamy" parent="." instance=ExtResource("3_ycs3c")]
@@ -117,7 +200,7 @@ position = Vector2(325, 1100)
 sprite_frames = SubResource("SpriteFrames_da0c8")
 
 [node name="Text" type="AnimatedSprite2D" parent="."]
-position = Vector2(427, 1104)
+position = Vector2(441, 1104)
 sprite_frames = SubResource("SpriteFrames_t0adf")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -146,3 +229,7 @@ offset_bottom = 1130.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_0hiuu")
 step = 1.0
 show_percentage = false
+
+[node name="Text2" type="AnimatedSprite2D" parent="."]
+position = Vector2(820, 1104)
+sprite_frames = SubResource("SpriteFrames_m86xg")

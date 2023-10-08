@@ -6,6 +6,8 @@ var dreamy
 var health = 100
 var speed: float = 0.01
 var room_1
+@onready var audioplayer = get_node("AudioStreamPlayer2D")
+@onready var hit2 = preload("res://assets/carhit2.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +15,6 @@ func _ready():
 	connect("hit", Callable(dreamy, "_on_hit"))
 	room_1 = get_tree().get_root().get_child(1)
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,6 +26,8 @@ func _on_body_entered(body):
 	elif body.is_in_group("bullet"):
 		body.queue_free()
 		health = health - 2
+		audioplayer.stream = hit2
+		audioplayer.play()
 
 func _physics_process(delta):
 	self.global_position = lerp(self.global_position,dreamy.global_position,speed)

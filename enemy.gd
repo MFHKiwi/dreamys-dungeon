@@ -14,6 +14,7 @@ var speed: float = 0.01
 @onready var explosion1 = get_node("Sprite2D1")
 @onready var explosion2 = get_node("Sprite2D2")
 @onready var explosion3 = get_node("Sprite2D3")
+@onready var hit1 = preload("res://assets/carhit1.mp3")
 #@onready var room_2 = get_tree().get_root().get_child(1)
 
 func _ready():
@@ -45,6 +46,8 @@ func _on_body_entered(body):
 	elif body.is_in_group("bullet"):
 		body.queue_free()
 		health = health - 2
+		audioplayer.stream = hit1
+		audioplayer.play()
 
 func _physics_process(delta):
 	self.global_position = lerp(self.global_position,dreamy.global_position,speed)
