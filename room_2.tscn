@@ -9,6 +9,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_28tvl")
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 3
 tile_set = ExtResource("1_ygjet")
 cell_quadrant_size = 20
 format = 2
@@ -20,6 +21,7 @@ scale = Vector2(0.35, 0.35)
 
 [node name="TileMap2" type="TileMap" parent="."]
 visible = false
+texture_filter = 3
 tile_set = ExtResource("1_ygjet")
 cell_quadrant_size = 20
 format = 2
