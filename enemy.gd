@@ -20,6 +20,7 @@ var speed: float = 0.01
 func _ready():
 	face.visible = true
 	hpbar.visible = true
+	audioplayer.volume_db = -10
 	add_child(timer)
 	timer.wait_time = 10
 	timer.start()

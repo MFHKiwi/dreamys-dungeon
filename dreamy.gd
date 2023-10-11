@@ -22,6 +22,8 @@ func _ready():
 	pass
 
 func _on_timeout():
+	if !self.is_physics_processing():
+		return
 	if Input.is_key_pressed(KEY_W):
 		fire('w')
 	elif Input.is_key_pressed(KEY_S):
