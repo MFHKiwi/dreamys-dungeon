@@ -13,7 +13,9 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	enemy.set_physics_process(false)
+	enemy.get_child(1).play("frozen")
 	dreamy.set_physics_process(false)
+	dreamy.get_child(0).play("idle")
 	enemy.visible = false
 	text.play("final1")
 	await get_tree().create_timer(1).timeout
@@ -36,6 +38,7 @@ func _ready():
 	audioplayer.volume_db = 0
 	text2.play("default")
 	enemy.set_physics_process(true)
+	enemy.get_child(1).play("default")
 	dreamy.set_physics_process(true)
 	#await get_tree().create_timer(0.5).timeout
 	audioplayer.stream = ohmaygot

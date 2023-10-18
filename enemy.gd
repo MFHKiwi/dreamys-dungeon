@@ -60,9 +60,9 @@ func _physics_process(delta):
 func die():
 	self.set_physics_process(false)
 	timer.stop()
+	$AnimatedSprite2D.play("frozen")
 	emit_signal("game_won")
 	face.play("death")
-	$AnimatedSprite2D.stop()
 	audioplayer.stream = death
 	audioplayer.volume_db = -5
 	audioplayer.play()

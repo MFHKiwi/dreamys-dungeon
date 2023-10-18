@@ -20,6 +20,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fyklb")
+}],
+"loop": true,
+"name": &"frozen",
+"speed": 5.0
 }]
 
 [node name="enemy" type="Area2D"]
